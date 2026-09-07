@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jom Hidup Sihat | SK Gedok</title>
+<meta name="description" content="Portal interaktif Program Pencegahan Dadah SK Gedok dan PSS Darul Hikmah.">
+<style>
+:root{
+ --navy:#0c3155;--blue:#1976d2;--cyan:#22a7e8;--red:#e53935;--gold:#f6c945;
+ --green:#2e9d67;--bg:#f4f9fd;--ink:#18344d;--muted:#60788d;--white:#fff;
+ --shadow:0 15px 45px rgba(12,49,85,.11);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);box-shadow:0 3px 20px rgba(12,49,85,.09)}
+.nav{max-width:1150px;margin:auto;padding:11px 18px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--navy)}.brandmark{width:42px;height:42px;border-radius:13px;background:linear-gradient(135deg,var(--navy),var(--blue));color:#fff;display:grid;place-items:center;font-size:22px}
+.navlinks{display:flex;gap:5px;flex-wrap:wrap;justify-content:flex-end}.navlinks a{padding:8px 10px;border-radius:10px;text-decoration:none;color:var(--navy);font-weight:800;font-size:13px}.navlinks a:hover{background:#eaf5ff;color:var(--blue)}
+.hero{background:radial-gradient(circle at 85% 20%,#d9f4ff 0 13%,transparent 14%),linear-gradient(135deg,#eaf7ff,#fff8d8);padding:70px 20px 75px;overflow:hidden}
+.wrap{max-width:1150px;margin:auto}.heroGrid{display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}.eyebrow{display:inline-block;padding:7px 12px;border-radius:999px;background:#fff;border:1px solid #d8eaf7;color:var(--blue);font-weight:900}
+h1{font-size:clamp(42px,7vw,78px);line-height:.96;color:var(--navy);margin:17px 0}h2{font-size:clamp(28px,4vw,44px);line-height:1.05;color:var(--navy);margin:0 0 10px}h3{color:var(--navy);margin:8px 0}.hero p{font-size:19px;max-width:680px;color:#456177}
+.btn{border:0;background:var(--blue);color:#fff;text-decoration:none;display:inline-block;padding:13px 18px;border-radius:14px;font-weight:900;cursor:pointer;box-shadow:0 9px 22px rgba(25,118,210,.22);transition:.2s}.btn:hover{transform:translateY(-2px)}.btn.red{background:var(--red)}.btn.dark{background:var(--navy)}
+.heroVisual{position:relative;text-align:center}.shield{font-size:145px;filter:drop-shadow(0 20px 18px rgba(12,49,85,.18));animation:bob 3s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-9px)}}.bubble{position:absolute;background:#fff;padding:10px 14px;border-radius:16px;box-shadow:var(--shadow);font-weight:900}.b1{top:7%;right:2%}.b2{bottom:10%;left:2%}
+section{padding:72px 20px}.white{background:#fff}.center{text-align:center}.sub{max-width:750px;margin:0 auto 30px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:#fff;border:1px solid #dcebf5;border-radius:22px;padding:22px;box-shadow:var(--shadow)}.icon{font-size:39px}.tag{display:inline-block;padding:5px 9px;border-radius:999px;background:#eef7ff;color:var(--blue);font-size:12px;font-weight:900}
+.callout{margin-top:22px;background:#fff4f3;border-left:6px solid var(--red);padding:20px;border-radius:15px}
+.steps{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.step{background:#f7fbff;border:1px solid #dcebf5;border-radius:20px;padding:19px}.num{display:grid;place-items:center;width:36px;height:36px;border-radius:50%;background:var(--navy);color:#fff;font-weight:900}
+.aadk{background:linear-gradient(135deg,#092d4f,#1976d2);color:#fff}.aadk h2,.aadk .sub{color:#fff}.aadk .card h3{color:var(--navy)}
+.banner{margin-top:25px;padding:20px;border-radius:20px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);font-weight:800}
+.quiz{max-width:850px;margin:30px auto}.q{background:#fff;border:1px solid #dcebf5;border-radius:20px;padding:22px;margin:15px 0;box-shadow:0 8px 25px rgba(12,49,85,.06)}.option{display:block;padding:12px 14px;margin:8px 0;border:2px solid #e4eef5;border-radius:12px;cursor:pointer}.option:hover{border-color:var(--blue);background:#f3f9ff}.result{display:none;margin-top:18px;padding:18px;border-radius:16px;background:#edf9f1;border:2px solid #bfe7cd;font-weight:900}
+.certificate{background:#fff8dc}.certBox{max-width:850px;margin:25px auto;background:#fff;border:3px solid var(--gold);border-radius:25px;padding:30px;text-align:center;box-shadow:var(--shadow)}input[type=text]{width:100%;max-width:550px;padding:13px 15px;border:2px solid #d7e5ef;border-radius:13px;font-size:16px}.certPreview{display:none;margin:25px auto 0;border:7px double var(--navy);padding:40px;background:#fff;text-align:center}.certPreview h2{font-size:38px}.certName{font-size:32px;font-weight:900;color:var(--blue);margin:20px 0}
+.pledge{background:#eaf7ff}.pledgeBox{max-width:800px;margin:25px auto;background:#fff;padding:28px;border-radius:24px;box-shadow:var(--shadow)}.checks label{display:block;margin:12px 0}
+footer{background:var(--navy);color:#fff;text-align:center;padding:38px 20px}.small{opacity:.75;font-size:13px}
+.top{position:fixed;right:16px;bottom:16px;width:45px;height:45px;border:0;border-radius:50%;background:var(--navy);color:#fff;font-size:20px;cursor:pointer;box-shadow:var(--shadow)}
+@media(max-width:900px){.heroGrid{grid-template-columns:1fr;text-align:center}.hero p{margin-left:auto;margin-right:auto}.grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.navlinks{display:none}}
+@media(max-width:540px){section{padding:55px 15px}.grid,.steps{grid-template-columns:1fr}.hero{padding-top:50px}.shield{font-size:105px}h1{font-size:51px}}
+@media print{body *{visibility:hidden}.certPreview,.certPreview *{visibility:visible}.certPreview{display:block!important;position:absolute;left:0;top:0;width:100%;margin:0;box-shadow:none}}
+</style>
+</head>
+<body>
+<nav><div class="nav">
+ <div class="brand"><div class="brandmark">🛡️</div><div>JOM HIDUP SIHAT<br><small>SK GEDOK • PSS DARUL HIKMAH</small></div></div>
+ <div class="navlinks"><a href="#kenali">KENALI</a><a href="#lindungi">LINDUNGI</a><a href="#aadk">AADK</a><a href="#kuiz">KUIZ</a><a href="#sijil">SIJIL</a><a href="#ikrar">IKRAR</a></div>
+</div></nav>
+
+<header class="hero"><div class="wrap heroGrid">
+ <div><span class="eyebrow">🚫 PROGRAM PENCEGAHAN DADAH</span>
+ <h1>HEBAT<br>TANPA DADAH!</h1>
+ <p><strong>Sekolah Bebas Dadah</strong><br>Berani berkata TIDAK. Bijak memilih. Jaga diri. Jaga masa depan.</p>
+ <a class="btn" href="#kenali">MULA BELAJAR →</a></div>
+ <div class="heroVisual"><div class="bubble b1">🌟 Pilih yang positif!</div><div class="shield">🛡️</div><div class="bubble b2">✋ Berani berkata TIDAK</div></div>
+</div></header>
+
+<section id="kenali"><div class="wrap">
+ <div class="center"><h2>🧠 Kenali Bahaya Dadah</h2><p class="sub">Pengetahuan membantu kita membuat pilihan yang selamat dan bijak.</p></div>
+ <div class="card callout"><strong>Apakah dadah?</strong><br>Dadah ialah bahan yang boleh mempengaruhi fungsi otak dan tubuh badan serta boleh menyebabkan ketagihan dan kemudaratan.</div>
+ <div class="grid" style="margin-top:20px">
+  <div class="card"><div class="icon">🧠</div><h3>Minda</h3><p>Boleh mengganggu fungsi otak dan pemikiran.</p></div>
+  <div class="card"><div class="icon">❤️</div><h3>Kesihatan</h3><p>Boleh memberi kesan buruk kepada tubuh badan.</p></div>
+  <div class="card"><div class="icon">📚</div><h3>Pelajaran</h3><p>Boleh menjejaskan tumpuan dan prestasi.</p></div>
+  <div class="card"><div class="icon">👨‍👩‍👧</div><h3>Keluarga</h3><p>Boleh menjejaskan hubungan dan kehidupan keluarga.</p></div>
+ </div>
+</div></section>
+
+<section id="lindungi" class="white"><div class="wrap">
+ <div class="center"><h2>🛡️ 5 Cara Lindungi Diri</h2><p class="sub">Murid yang bijak tahu bila perlu berkata tidak dan meminta bantuan.</p></div>
+ <div class="steps">
+  <div class="step"><span class="num">1</span><h3>Pilih kawan</h3><p>Berkawan dengan mereka yang membawa pengaruh positif.</p></div>
+  <div class="step"><span class="num">2</span><h3>Berkata TIDAK</h3><p>Tolak perkara yang boleh membahayakan diri.</p></div>
+  <div class="step"><span class="num">3</span><h3>Jauhi risiko</h3><p>Jangan mudah terpengaruh dengan ajakan negatif.</p></div>
+  <div class="step"><span class="num">4</span><h3>Aktif & sihat</h3><p>Bersukan, membaca, berkarya dan aktif di sekolah.</p></div>
+  <div class="step"><span class="num">5</span><h3>Minta bantuan</h3><p>Beritahu guru, ibu bapa/penjaga atau kaunselor.</p></div>
+ </div>
+</div></section>
+
+<section id="aadk" class="aadk"><div class="wrap">
+ <div class="center"><h2>👮 Peranan AADK</h2><p class="sub">Agensi Antidadah Kebangsaan (AADK) ialah antara agensi penting dalam usaha pencegahan dan menangani isu berkaitan dadah.</p></div>
+ <div class="grid">
+  <div class="card"><div class="icon">🎓</div><h3>Pendidikan Pencegahan</h3><p>Memberikan pendidikan dan kesedaran tentang bahaya penyalahgunaan dadah.</p></div>
+  <div class="card"><div class="icon">📢</div><h3>Advokasi & Kesedaran</h3><p>Menyampaikan mesej pencegahan kepada murid, keluarga dan masyarakat.</p></div>
+  <div class="card"><div class="icon">🛡️</div><h3>Intervensi & Sokongan</h3><p>Membantu menangani isu penyalahgunaan dadah melalui pendekatan dan sokongan yang sesuai.</p></div>
+  <div class="card"><div class="icon">🤝</div><h3>Kerjasama Komuniti</h3><p>Bekerjasama dengan sekolah, keluarga dan komuniti dalam pencegahan dadah.</p></div>
+ </div>
+ <div class="banner">💙 <strong>AADK + SEKOLAH + KELUARGA + KOMUNITI</strong><br>Bersama-sama membina generasi yang sihat dan bebas dadah.</div>
+</div></section>
+
+<section id="kuiz"><div class="wrap">
+ <div class="center"><h2>🎮 Kuiz Wira Anti-Dadah</h2><p class="sub">Jawab semua soalan dan lihat skor anda.</p></div>
+ <div class="quiz">
+  <div class="q"><strong>1. Jika seseorang menawarkan sesuatu yang tidak diketahui kepada kita, apakah tindakan paling selamat?</strong>
+   <label class="option"><input type="radio" name="q1" value="0"> Cuba sedikit</label><label class="option"><input type="radio" name="q1" value="0"> Terima kerana kawan</label><label class="option"><input type="radio" name="q1" value="1"> Tolak dan beritahu orang dewasa yang dipercayai</label></div>
+  <div class="q"><strong>2. Siapakah yang boleh membantu jika kita mempunyai masalah?</strong>
+   <label class="option"><input type="radio" name="q2" value="0"> Tiada siapa</label><label class="option"><input type="radio" name="q2" value="1"> Guru, ibu bapa/penjaga atau kaunselor</label><label class="option"><input type="radio" name="q2" value="0"> Hanya ikut kawan</label></div>
+  <div class="q"><strong>3. Apakah pilihan terbaik untuk masa depan?</strong>
+   <label class="option"><input type="radio" name="q3" value="0"> Mengikut pengaruh negatif</label><label class="option"><input type="radio" name="q3" value="1"> Aktiviti sihat dan positif</label><label class="option"><input type="radio" name="q3" value="0"> Mencuba perkara berisiko</label></div>
+  <button class="btn" onclick="checkQuiz()">SEMAK MARKAH 🏆</button><div id="result" class="result"></div>
+ </div>
+</div></section>
+
+<section id="sijil" class="certificate"><div class="wrap">
+ <div class="center"><h2>🏆 Jana Sijil Wira Anti-Dadah</h2><p class="sub">Masukkan nama murid. Jika mendapat 3/3 dalam kuiz, sijil boleh dijana dan dicetak.</p></div>
+ <div class="certBox">
+  <input id="studentName" type="text" placeholder="Taip nama penuh murid">
+  <br><br><button class="btn dark" onclick="makeCert()">JANA SIJIL</button>
+  <div id="cert" class="certPreview">
+   <div style="font-size:48px">🏆</div><h2>SIJIL WIRA ANTI-DADAH</h2>
+   <p>Diberikan kepada</p><div id="certName" class="certName"></div>
+   <p>kerana berjaya melengkapkan Kuiz Wira Anti-Dadah dan menunjukkan pengetahuan tentang kepentingan menjauhi dadah.</p>
+   <p><strong>SK GEDOK • PSS DARUL HIKMAH</strong></p><p id="certDate"></p>
+   <br><button class="btn" onclick="window.print()">🖨️ CETAK / SIMPAN PDF</button>
+  </div>
+ </div>
+</div></section>
+
+<section id="ikrar" class="pledge"><div class="wrap">
+ <div class="center"><h2>✋ Ikrar Saya</h2><p class="sub">Saya memilih kehidupan yang sihat, selamat dan bermakna.</p></div>
+ <div class="pledgeBox">
+  <h3 style="text-align:center">SAYA PILIH HIDUP SIHAT! 💙</h3>
+  <div class="checks">
+   <label><input type="checkbox"> Saya akan menjauhi dadah dan bahan yang memudaratkan.</label>
+   <label><input type="checkbox"> Saya akan menjaga diri dan rakan-rakan.</label>
+   <label><input type="checkbox"> Saya akan berani berkata <strong>TIDAK</strong> kepada pengaruh negatif.</label>
+   <label><input type="checkbox"> Saya akan mengisi masa dengan aktiviti yang sihat dan bermanfaat.</label>
+   <label><input type="checkbox"> Saya akan mendapatkan bantuan daripada orang dewasa yang dipercayai apabila menghadapi masalah.</label>
+  </div>
+  <button class="btn red" onclick="pledge()">✋ SAYA PILIH HIDUP SIHAT!</button><p id="pledgeMsg"></p>
+ </div>
+</div></section>
+
+<footer><strong>🏫 SK GEDOK</strong><br>PSS DARUL HIKMAH • PROGRAM PENCEGAHAN DADAH<p class="small">Bahan pendidikan untuk murid. Untuk maklumat dan bantuan rasmi berkaitan dadah, rujuk pihak sekolah atau saluran rasmi AADK.</p></footer>
+<button class="top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+let lastScore=null;
+function checkQuiz(){
+ let score=0,answered=0;
+ ['q1','q2','q3'].forEach(n=>{const x=document.querySelector('input[name="'+n+'"]:checked');if(x){answered++;score+=Number(x.value)}});
+ const r=document.getElementById('result');r.style.display='block';
+ if(answered<3){r.textContent='⚠️ Sila jawab semua 3 soalan dahulu.';return}
+ lastScore=score;
+ r.textContent=score===3?'🏆 3/3 — Wira Anti-Dadah! Hebat!':score===2?'🌟 2/3 — Bagus! Cuba lagi untuk markah penuh!':'📚 '+score+'/3 — Jom belajar semula dan cuba lagi!';
+}
+function makeCert(){
+ const name=document.getElementById('studentName').value.trim();
+ if(!name){alert('Sila masukkan nama murid.');return}
+ if(lastScore!==3){alert('Sijil boleh dijana selepas murid mendapat 3/3 dalam kuiz.');return}
+ document.getElementById('certName').textContent=name;
+ document.getElementById('certDate').textContent=new Intl.DateTimeFormat('ms-MY',{dateStyle:'long'}).format(new Date());
+ document.getElementById('cert').style.display='block';
+}
+function pledge(){
+ const ok=[...document.querySelectorAll('.checks input')].every(x=>x.checked);
+ const p=document.getElementById('pledgeMsg');p.style.fontWeight='900';
+ p.textContent=ok?'🎉 Tahniah! Ikrar anda telah lengkap. Teruskan menjadi contoh yang baik!':'☝️ Tandakan semua ikrar dahulu.';
+}
+</script>
+</body>
+</html>
